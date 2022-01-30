@@ -23,7 +23,9 @@ body {
   margin-bottom: 5%;
 }
 /* Content */
-
+.poster {
+    box-shadow: 0 0 20px rgba(206, 206, 206, 0.25);
+}
 .up-btn {background-image: linear-gradient(to right, #ff0084 0%, #33001b  51%, #ff0084  100%)}
 .up-btn {
   margin: 10px;
@@ -73,8 +75,8 @@ body {
     }
     .card {
       border-radius: 15px;
-      margin: 3% 18%;
-      width:70%;
+      margin: 3% 2.5%;
+      width:45%;
     }
 }
 
