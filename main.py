@@ -55,7 +55,7 @@ def create():
    symbolist = ','.join(symbol_list)
 
    params = {
-      'access_key': '107492fb008338b63d428f38120cd892',
+      'access_key': '79b7267fd74226bd9f693752bfca7f54',
       'limit': len(symbol_list),
       'symbols': symbolist,
    }
@@ -93,7 +93,7 @@ def update():
    symbolist = ','.join(symbol_list)
 
    params = {
-      'access_key': '107492fb008338b63d428f38120cd892',
+      'access_key': '79b7267fd74226bd9f693752bfca7f54',
       'limit': len(symbol_list),
       'symbols': symbolist,
    }
