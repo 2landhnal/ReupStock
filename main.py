@@ -125,22 +125,22 @@ def update():
 create()
 # update()
 
-# @app.route('/', methods=['POST', 'GET'])
-# def home():
-#    coms = Companies.query.all()
-#    if request.method == 'POST':
-#       print('POST')
-#       try:
-#          update()
-#          coms = Companies.query.all()
-#          return redirect(url_for('home'))
-#       except:
-#          return redirect(url_for('home'))
-#    return render_template('index.html', coms=coms)
-#
-# if __name__ == '__main__':
-#    port = int(os.environ.get('PORT', 5000))
-#    app.run(host='0.0.0.0', port=port)
+@app.route('/', methods=['POST', 'GET'])
+def home():
+   coms = Companies.query.all()
+   if request.method == 'POST':
+      print('POST')
+      try:
+         update()
+         coms = Companies.query.all()
+         return redirect(url_for('home'))
+      except:
+         return redirect(url_for('home'))
+   return render_template('index.html', coms=coms)
+
+if __name__ == '__main__':
+   port = int(os.environ.get('PORT', 5000))
+   app.run(host='0.0.0.0', port=port)
 
 ### Sample ###
 # with open('static/data.csv', 'r') as read_obj:
