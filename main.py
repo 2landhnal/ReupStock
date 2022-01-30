@@ -43,8 +43,8 @@ class Companies(db.Model):
    low = db.Column(db.String(250), nullable=False)
    date = db.Column(db.String(250), nullable=False)
    color = db.Column(db.String(250), nullable=False)
-
-db.create_all()
+#
+# db.create_all()
 
 def create():
    with open('static/data.csv', 'r') as read_obj:
@@ -122,7 +122,7 @@ def update():
       comp.date = date[:10]
       db.session.commit()
 
-create()
+# create()
 # update()
 
 @app.route('/', methods=['POST', 'GET'])
