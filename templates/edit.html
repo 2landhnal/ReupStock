@@ -13,10 +13,9 @@
     <section class='bodi'>
 
       <div class="container-fluid">
-             <form method="post" class="row" action={{url_for('home')}}>
-               <button class='up-btn btn btn-lg btn-block text-uppercas col ' type="submit" name="button">Upgrade</button>
-                 <a href="{{url_for('login')}}" class='col up-btn btn btn-lg btn-block text-uppercas'>Dev Tools</a>
-             </form>
+         <form method="post" action={{url_for('home')}}>
+           <button class='up-btn btn btn-lg btn-block text-uppercas' type="submit" name="button">Upgrade</button>
+         </form>
       </div>
 
       <!-- Cards -->
@@ -30,6 +29,7 @@
             <p>High: {{ com.high }}</p>
             <p>Low: {{ com.low }}</p>
             <p>{{ com.date }}</p>
+            <a href="{{url_for('delete', com_id=com.id)}}" class='up-btn btn btn-lg btn-block text-uppercas'>Delete</a>
           </div>
           {% endfor %}
 

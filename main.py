@@ -138,6 +138,28 @@ def home():
          return redirect(url_for('home'))
    return render_template('index.html', coms=coms)
 
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+   if request.method == 'POST':
+      form = request.form
+      if form['password'] == '141417':
+         return redirect(url_for('edit'))
+      else:
+         flash('Incorrect Password. Try Again.')
+   return render_template('login.html')
+
+@app.route(f'/edit/ash8duas9dasasbas9asa8da')
+def edit():
+   coms = Companies.query.all()
+   return render_template('edit.html', coms=coms)
+
+@app.route('/delete/<int:com_id>', methods=['POST', 'GET'])
+def delete():
+   card = Companies.query.get(com_id)
+   db.session.delete(card)
+   db.session.commit()
+   return redirect(url_for('edit'))
+
 if __name__ == '__main__':
    port = int(os.environ.get('PORT', 5000))
    app.run(host='0.0.0.0', port=port)

@@ -1,7 +1,10 @@
 body {
+  position: relative;
+  min-height: 100vh;
   background: #03103d;
   font-family: 'Ubuntu', sans-serif;
   text-align: left;
+  padding-bottom: 20%;
 }
 .container-fluid {
   padding: 3% 10%;
@@ -23,6 +26,10 @@ body {
   margin-bottom: 5%;
 }
 /* Content */
+.login {
+    padding-top: 20%;
+}
+
 .poster {
     box-shadow: 0 0 20px rgba(206, 206, 206, 0.25);
 }
@@ -82,9 +89,13 @@ body {
 
 /* Footer */
 .footer {
+  width: 100%;
+  position:absolute;
+  bottom:0;
   text-align: center;
   margin-top: 1%;
   background-color: black;
+  color: white;
 }
 .fas {
   color: rgba(152, 152, 152, 0.42);
