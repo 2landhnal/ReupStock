@@ -142,19 +142,19 @@ def home():
 def login():
    if request.method == 'POST':
       form = request.form
-      if form['password'] == '141417':
+      if form['password'] == os.environ.get('PASS'):
          return redirect(url_for('edit'))
       else:
          flash('Incorrect Password. Try Again.')
    return render_template('login.html')
 
-@app.route(f'/edit/ash8duas9dasasbas9asa8da')
+@app.route(f'/edit/{os.environ.get("sekret_key")}')
 def edit():
    coms = Companies.query.all()
    return render_template('edit.html', coms=coms)
 
 @app.route('/delete/<int:com_id>', methods=['POST', 'GET'])
-def delete():
+def delete(com_id):
    card = Companies.query.get(com_id)
    db.session.delete(card)
    db.session.commit()
